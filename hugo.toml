@@ -109,7 +109,6 @@ url = "https://medium.com/@aiell0tech"
 
 [[params.socialIcons]]
 name = "mastodon"
-icon = "mastodon"
 url = "https://hachyderm.io/@aiell0"
 
 [[params.socialIcons]]
