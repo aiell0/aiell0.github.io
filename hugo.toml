@@ -72,7 +72,7 @@ disqusShortname = ''
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Lawrence Aiello"
   name = "Lawrence Aiello"
-  description = "Musings on Tech, DevOps, and SRE topics."
+  description = "Musings on DevOps, SRE, and Digital Nomadism"
 
 # Allow to override webmanifest options
 [params.webmanifest]
