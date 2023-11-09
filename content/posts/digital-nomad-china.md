@@ -55,3 +55,5 @@ If you are considering trying this crazy work schedule, I recommend you take the
 3. Get a VPN service that gets you around the firewall if you wish to use wifi. I used [this one](https://my.yunti.io/).
 4. If you are not a native speaker, download a translator app such as [Pleco](https://www.pleco.com/), [Ace Translator](https://ace-translator.software.informer.com/) or [Google Translate](https://translate.google.com/).
 5. Download [WeChat](https://www.wechat.com/) and have a friend send you an invite.
+
+Also posted on [Medium](https://medium.com/@aiell0tech/digital-nomad-china-4bff6a669be1).
