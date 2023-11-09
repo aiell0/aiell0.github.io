@@ -2,19 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Lawrence Aiello&#39;s Blog</title>
-    <link>https://hba.sid.one/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Lawrence Aiello&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jul 2023 16:25:16 -0400</lastBuildDate><atom:link href="https://hba.sid.one/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 10:26:14 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital Nomad: China</title>
+      <link>//localhost:1313/posts/digital-nomad-china/</link>
+      <pubDate>Sat, 04 Nov 2023 10:26:14 -0400</pubDate>
+      <guid>//localhost:1313/posts/digital-nomad-china/</guid>
+      <description>Digital Nomad in China Recently, I had the opportunity to travel in China with my partner. It was a month long trip and was a mixture of pleasure (via sightseeing) and personal (my partner&amp;rsquo;s family is from there). Given that I recently joined my company and due to the length of the trip, I did not have the luxury of taking too much time off. I love a challenge, so I decided to work east coast US hours from Asia.</description>
+    </item>
     <item>
       <title>Arch Adventures: Installing AWS SSM</title>
-      <link>https://hba.sid.one/posts/first-post/</link>
+      <link>//localhost:1313/posts/first-post/</link>
       <pubDate>Tue, 04 Jul 2023 16:25:16 -0400</pubDate>
-      
-      <guid>https://hba.sid.one/posts/first-post/</guid>
+      <guid>//localhost:1313/posts/first-post/</guid>
       <description>Arch Adventures: Installing AWS SSM One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.</description>
     </item>
-    
   </channel>
 </rss>
