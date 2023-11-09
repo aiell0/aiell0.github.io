@@ -1,6 +1,6 @@
 ---
 title: "Digital Nomad: China"
-date: 2023-11-08T16:25:16-04:00
+date: 2023-11-09T16:25:16-04:00
 draft: false
 ---
 
