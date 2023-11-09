@@ -1,6 +1,6 @@
 ---
 title: "Digital Nomad: China"
-date: 2023-11-07T16:25:16-04:00
+date: 2023-11-08T16:25:16-04:00
 draft: false
 ---
 
@@ -48,10 +48,10 @@ We took a bullet train from Hangzhou to Shanghai and spent the last leg of our t
 
 ## Conclusion: List of Tips
 
-If you are considering trying this crazy work schedule, I recommend the following:
+If you are considering trying this crazy work schedule, I recommend you take the following actions:
 
 1. Check your company policy and ensure they are ok with you traveling and working from China.
-2. Ensure you will have phone service. I recommend Google Fi's Unlimited Plus subscription (I'm not being paid to write this, promise!)
+2. Ensure you will have phone service. I suggest Google Fi's Unlimited Plus subscription.
 3. Get a VPN service that gets you around the firewall if you wish to use wifi. I used [this one](https://my.yunti.io/).
 4. If you are not a native speaker, download a translator app such as [Pleco](https://www.pleco.com/), [Ace Translator](https://ace-translator.software.informer.com/) or [Google Translate](https://translate.google.com/).
 5. Download [WeChat](https://www.wechat.com/) and have a friend send you an invite.
