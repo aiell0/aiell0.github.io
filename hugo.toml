@@ -41,15 +41,30 @@ disqusShortname = ''
     url = '/'
     weight = 10
   [[menu.main]]
-    pageRef="posts"
-    name = 'Posts'
-    url = '/posts/'
+    pageRef="tech"
+    name = 'Technical Articles'
+    url = '/tech/'
     weight = 20
+  [[menu.main]]
+    pageRef="book"
+    name = 'Book Reviews'
+    url = '/bookreviews/'
+    weight = 30
+  [[menu.main]]
+    pageRef="nomad"
+    name = 'Digital Nomadism'
+    url = '/nomad/'
+    weight = 40
+  [[menu.main]]
+    pageRef="random"
+    name = 'Random'
+    url = '/random/'
+    weight = 50
   [[menu.main]]
     pageRef="about"
     name = 'About'
     url = '/about/'
-    weight = 30
+    weight = 60
 
 [params]
   sitename = "Lawrence's Tech Blog"
