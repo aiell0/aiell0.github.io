@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Teches on Lawrence Aiello&#39;s Blog</title>
-    <link>http://localhost:1313/tech/</link>
-    <description>Recent content in Teches on Lawrence Aiello&#39;s Blog</description>
+    <title>Tech_articles on Lawrence Aiello&#39;s Blog</title>
+    <link>http://localhost:1313/tech_articles/</link>
+    <description>Recent content in Tech_articles on Lawrence Aiello&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jul 2023 16:25:16 -0400</lastBuildDate><atom:link href="http://localhost:1313/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jul 2023 16:25:16 -0400</lastBuildDate><atom:link href="http://localhost:1313/tech_articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch Adventures: Installing AWS SSM</title>
-      <link>http://localhost:1313/tech/first-post/</link>
+      <link>http://localhost:1313/tech_articles/first-post/</link>
       <pubDate>Tue, 04 Jul 2023 16:25:16 -0400</pubDate>
       
-      <guid>http://localhost:1313/tech/first-post/</guid>
+      <guid>http://localhost:1313/tech_articles/first-post/</guid>
       
       <description>&lt;h1 id=&#34;arch-adventures-installing-awsssm&#34;&gt;Arch Adventures: Installing AWS SSM&lt;/h1&gt;
 &lt;p&gt;One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.&lt;/p&gt;</description>

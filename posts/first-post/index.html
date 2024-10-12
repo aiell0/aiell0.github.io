@@ -1,7 +1,240 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Arch Adventures: Installing AWS SSM | Lawrence Aiello's Blog</title>
-<meta property="og:title" content="Arch Adventures: Installing AWS SSM | Lawrence Aiello's Blog"><meta name=twitter:title content="Arch Adventures: Installing AWS SSM | Lawrence Aiello's Blog"><meta itemprop=name content="Arch Adventures: Installing AWS SSM | Lawrence Aiello's Blog"><meta name=application-name content="Arch Adventures: Installing AWS SSM | Lawrence Aiello's Blog"><meta property="og:site_name" content="Lawrence's Tech Blog"><meta name=description content="Minimal Hugo blog theme with light and dark mode support"><meta itemprop=description content="Minimal Hugo blog theme with light and dark mode support"><meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support"><meta name=twitter:description content="Minimal Hugo blog theme with light and dark mode support"><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en-gb href=https://aiell0.github.io/posts/first-post/ title><meta property="og:type" content="article"><meta property="og:article:published_time" content=2023-07-04T16:25:16-0400><meta property="article:published_time" content=2023-07-04T16:25:16-0400><meta property="og:url" content="https://aiell0.github.io/posts/first-post/"><meta property="og:article:author" content="Lawrence Aiello"><meta property="article:author" content="Lawrence Aiello"><meta name=author content="Lawrence Aiello"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"Arch Adventures: Installing AWS SSM","author":{"@type":"Person","name":""},"datePublished":"2023-07-04","description":"","wordCount":1009,"mainEntityOfPage":"True","dateModified":"2023-07-04","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"Lawrence Aiello\u0027s Blog"}}</script><meta name=generator content="Hugo 0.135.0"><meta property="og:url" content="https://aiell0.github.io/posts/first-post/"><meta property="og:site_name" content="Lawrence Aiello's Blog"><meta property="og:title" content="Arch Adventures: Installing AWS SSM"><meta property="og:description" content="Arch Adventures: Installing AWS SSM One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-07-04T16:25:16-04:00"><meta property="article:modified_time" content="2023-07-04T16:25:16-04:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Arch Adventures: Installing AWS SSM"><meta name=twitter:description content="Arch Adventures: Installing AWS SSM One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow."><link rel=canonical href=https://aiell0.github.io/posts/first-post/><link href=/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://aiell0.github.io/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><script async src="https://www.googletagmanager.com/gtag/js?id=G-GEWWN3CQQD"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GEWWN3CQQD")}</script></head><body data-theme=dark class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://aiell0.github.io/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-</a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class=menu-link href=/tech/>Technical Articles</a></li><li><a class=menu-link href=/bookreviews/>Book Reviews</a></li><li><a class=menu-link href=/nomad/>Digital Nomadism</a></li><li><a class=menu-link href=/random/>Random</a></li><li><a class=menu-link href=/about/>About</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Arch Adventures: Installing AWS SSM</h1><div class=post-meta><time datetime=2023-07-04T16:25:16-04:00 itemprop=datePublished>4 Jul 2023</time></div></header><details class=toc zgotmplz><summary><b>Table of Contents</b></summary><nav id=TableOfContents><ul><li><a href=#so-what-is-archlinux>So what is Arch Linux?</a></li><li><a href=#running-arch-onaws>Running Arch on AWS</a></li><li><a href=#installing-aws-sessionmanager>Installing AWS Session Manager</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></details><div class=page-content><h1 id=arch-adventures-installing-awsssm>Arch Adventures: Installing AWS SSM</h1><p>One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.</p><p>One such project suggested using Arch Linux as a means to run their software. I love a good challenge and have never used Arch Linux before. So, I dove in.</p><h2 id=so-what-is-archlinux>So what is Arch Linux?</h2><p>Arch Linux, also known as the &ldquo;Linux for power users,&rdquo; has been making waves in the open-source community since its inception in 2002. Its philosophy of simplicity, user-centricity, and adherence to the KISS (Keep It Simple, Stupid) principle has earned it a reputation as a versatile and customizable distribution that allows users to create a tailor-made Linux experience. While other distributions may hold your hand with pre-configured setups and polished graphical interfaces, Arch Linux leaves it up to you to design your system from the ground up, making it a popular choice for those who love to tinker and learn.</p><p>This is a great use case for blockchain nodes because they need to be as performant as possible and with the least bloat. As we will be running this in a cloud environment, storage and compute is not cheap, and having extra to run software you don&rsquo;t need will eat into your profits as an operator. The wiki for Arch is quite extensive and you can find what you need to help you customize your OS on there.</p><h2 id=running-arch-onaws>Running Arch on AWS</h2><p>Arch is not currently supported by AWS, which means that many of the products that come baked in with Amazon Linux, Ubuntu, and CentOS are not installed on to Arch by default. That being said, there is a fair amount of support from the Linux community, as documented here on the wiki. There are even APIs you can use to curl them yourself. I&rsquo;m more of a Terraform kind of guy, so I just use the following code to get it.</p><pre tabindex=0><code>data &#34;aws_ami&#34; &#34;arch&#34; {
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Arch Adventures: Installing AWS SSM | Lawrence Aiello&#39;s Blog</title>
+<meta property="og:title" content="Arch Adventures: Installing AWS SSM | Lawrence Aiello&#39;s Blog" />
+<meta name="twitter:title" content="Arch Adventures: Installing AWS SSM | Lawrence Aiello&#39;s Blog" />
+<meta itemprop="name" content="Arch Adventures: Installing AWS SSM | Lawrence Aiello&#39;s Blog" />
+<meta name="application-name" content="Arch Adventures: Installing AWS SSM | Lawrence Aiello&#39;s Blog" />
+<meta property="og:site_name" content="Lawrence&#39;s Tech Blog" />
+
+<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
+<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/first-post/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-07-04T16:25:16-0400 />
+    <meta property="article:published_time" content=2023-07-04T16:25:16-0400 />
+    <meta property="og:url" content="http://localhost:1313/posts/first-post/" />
+
+    
+    <meta property="og:article:author" content="Lawrence Aiello" />
+    <meta property="article:author" content="Lawrence Aiello" />
+    <meta name="author" content="Lawrence Aiello" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Arch Adventures: Installing AWS SSM",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-07-04",
+        "description": "",
+        "wordCount":  1009 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-07-04",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Lawrence Aiello\u0027s Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.135.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/first-post/">
+  <meta property="og:site_name" content="Lawrence Aiello&#39;s Blog">
+  <meta property="og:title" content="Arch Adventures: Installing AWS SSM">
+  <meta property="og:description" content="Arch Adventures: Installing AWS SSM One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-07-04T16:25:16-04:00">
+    <meta property="article:modified_time" content="2023-07-04T16:25:16-04:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arch Adventures: Installing AWS SSM">
+  <meta name="twitter:description" content="Arch Adventures: Installing AWS SSM One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/first-post/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/technical-articles/">
+                        Technical Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/bookreviews/">
+                        Book Reviews
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/nomad/">
+                        Digital Nomadism
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/random/">
+                        Random
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Arch Adventures: Installing AWS SSM</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-07-04T16:25:16-04:00" itemprop="datePublished"> 4 Jul 2023 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#so-what-is-archlinux">So what is Arch Linux?</a></li>
+    <li><a href="#running-arch-onaws">Running Arch on AWS</a></li>
+    <li><a href="#installing-aws-sessionmanager">Installing AWS Session Manager</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="arch-adventures-installing-awsssm">Arch Adventures: Installing AWS SSM</h1>
+<p>One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.</p>
+<p>One such project suggested using Arch Linux as a means to run their software. I love a good challenge and have never used Arch Linux before. So, I dove in.</p>
+<h2 id="so-what-is-archlinux">So what is Arch Linux?</h2>
+<p>Arch Linux, also known as the &ldquo;Linux for power users,&rdquo; has been making waves in the open-source community since its inception in 2002. Its philosophy of simplicity, user-centricity, and adherence to the KISS (Keep It Simple, Stupid) principle has earned it a reputation as a versatile and customizable distribution that allows users to create a tailor-made Linux experience. While other distributions may hold your hand with pre-configured setups and polished graphical interfaces, Arch Linux leaves it up to you to design your system from the ground up, making it a popular choice for those who love to tinker and learn.</p>
+<p>This is a great use case for blockchain nodes because they need to be as performant as possible and with the least bloat. As we will be running this in a cloud environment, storage and compute is not cheap, and having extra to run software you don&rsquo;t need will eat into your profits as an operator. The wiki for Arch is quite extensive and you can find what you need to help you customize your OS on there.</p>
+<h2 id="running-arch-onaws">Running Arch on AWS</h2>
+<p>Arch is not currently supported by AWS, which means that many of the products that come baked in with Amazon Linux, Ubuntu, and CentOS are not installed on to Arch by default. That being said, there is a fair amount of support from the Linux community, as documented here on the wiki. There are even APIs you can use to curl them yourself. I&rsquo;m more of a Terraform kind of guy, so I just use the following code to get it.</p>
+<pre tabindex="0"><code>data &#34;aws_ami&#34; &#34;arch&#34; {
   most_recent = true
 
   filter {
@@ -22,23 +255,37 @@
     }
     owners = [&#34;647457786197&#34;]
   }
-</code></pre><p>You will have to use SSH key pairs at first, because Session Manager does not come baked in to it. We will fix this later. You will notice however that the AWS CLI is already installed though. Yay!</p><p>You will then have to initialize the instance, which we do using the following code.</p><pre tabindex=0><code>pacman-key --init
+</code></pre><p>You will have to use SSH key pairs at first, because Session Manager does not come baked in to it. We will fix this later. You will notice however that the AWS CLI is already installed though. Yay!</p>
+<p>You will then have to initialize the instance, which we do using the following code.</p>
+<pre tabindex="0"><code>pacman-key --init
 pacman-key --populate
 reflector --country &#34;US&#34; --protocol https,http --score 20 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syu --noconfirm
-</code></pre><p>Pacman is the package manager for Arch Linux. It works a bit differently than other distros. The command <code>pacman-key --init</code> sets up the initial configuration and generates a master key pair for your system. This key pair is used to manage the signing and verification of package keys. Running this command is a crucial step in setting up a secure environment for pacman to operate in.</p><p>The <code>pacman-key --populate</code> command is used to import the public keys of the developers and packagers for a specific repository into your local pacman keyring. These public keys are used by pacman to verify the signatures of packages and repository databases, ensuring their authenticity and integrity.</p><p>The <code>reflector</code> command is used to retrieve and filter a list of the most up-to-date and fastest Arch Linux mirror servers based on certain criteria, and save the resulting list to a file. I am using the US as my server is in us-east-1, but you should use the CLI to query your region and change the country code accordingly to make the script idempotent.</p><p>Finally, the <code>pacman -Syu --noconfirm</code> command updates all of the packages. Now we are ready to install AWS Session Manager.</p><h2 id=installing-aws-sessionmanager>Installing AWS Session Manager</h2><p>First things first, we need to install the required packages:</p><p><code>pacman -S go git make cmake gcc dhcpcd zip --noconfirm</code></p><p>Since SSM is not supported on Arch, we will have to build it ourselves which is why you need to install all of these tools. You then set up your go environment like so:</p><pre tabindex=0><code>export GOCACHE=&#34;/root/.cache/go-build&#34;
+</code></pre><p>Pacman is the package manager for Arch Linux. It works a bit differently than other distros. The command <code>pacman-key --init</code> sets up the initial configuration and generates a master key pair for your system. This key pair is used to manage the signing and verification of package keys. Running this command is a crucial step in setting up a secure environment for pacman to operate in.</p>
+<p>The <code>pacman-key --populate</code> command is used to import the public keys of the developers and packagers for a specific repository into your local pacman keyring. These public keys are used by pacman to verify the signatures of packages and repository databases, ensuring their authenticity and integrity.</p>
+<p>The <code>reflector</code> command is used to retrieve and filter a list of the most up-to-date and fastest Arch Linux mirror servers based on certain criteria, and save the resulting list to a file. I am using the US as my server is in us-east-1, but you should use the CLI to query your region and change the country code accordingly to make the script idempotent.</p>
+<p>Finally, the <code>pacman -Syu --noconfirm</code> command updates all of the packages. Now we are ready to install AWS Session Manager.</p>
+<h2 id="installing-aws-sessionmanager">Installing AWS Session Manager</h2>
+<p>First things first, we need to install the required packages:</p>
+<p><code>pacman -S go git make cmake gcc dhcpcd zip --noconfirm</code></p>
+<p>Since SSM is not supported on Arch, we will have to build it ourselves which is why you need to install all of these tools. You then set up your go environment like so:</p>
+<pre tabindex="0"><code>export GOCACHE=&#34;/root/.cache/go-build&#34;
 export GOMODCACHE=&#34;/root/go/pkg/mod&#34;
 export GOENV=&#34;/root/.config/go/env&#34;
 export GOPATH=&#34;/root/go&#34;
 export GOARCH=amd64
 export GOOS=1inux
-</code></pre><p>I was having networking issues when running the SSM agent, the following two commands (along with installing the service above) fixed them for me:</p><pre tabindex=0><code>systemctl start dhcpcd.service
+</code></pre><p>I was having networking issues when running the SSM agent, the following two commands (along with installing the service above) fixed them for me:</p>
+<pre tabindex="0"><code>systemctl start dhcpcd.service
 systemctl enable dhcpcd.service
-</code></pre><p>Now we build the agent! The Github repository for the agent is located here, and we clone it like so. Note that we use the opt directory because this is third-party software that we don&rsquo;t want to conflict with other software on our system:</p><pre tabindex=0><code>git clone https://github.com/aws/amazon-ssm-agent.git /opt/aws/amazon-ssm-agent
-</code></pre><p>Then run the following commands to build it. The SSM agent is pure Go code so we don&rsquo;t need the C compiler:</p><pre tabindex=0><code>cd /opt/aws/amazon-ssm-agent
+</code></pre><p>Now we build the agent! The Github repository for the agent is located here, and we clone it like so. Note that we use the opt directory because this is third-party software that we don&rsquo;t want to conflict with other software on our system:</p>
+<pre tabindex="0"><code>git clone https://github.com/aws/amazon-ssm-agent.git /opt/aws/amazon-ssm-agent
+</code></pre><p>Then run the following commands to build it. The SSM agent is pure Go code so we don&rsquo;t need the C compiler:</p>
+<pre tabindex="0"><code>cd /opt/aws/amazon-ssm-agent
 CGO_ENABLED=0 make build-linux
 </code></pre><p>This takes a while so go make a coffee while you wait. Once it&rsquo;s completed, you will see a bin directory containing the SSM agent binaries. Congrats!
-Now the next step is to make the SSM agent itself a systemd service. Use the following command to do that:</p><pre tabindex=0><code>cat &lt;&lt; EOF &gt; /etc/systemd/system/ssmagent.service
+Now the next step is to make the SSM agent itself a systemd service. Use the following command to do that:</p>
+<pre tabindex="0"><code>cat &lt;&lt; EOF &gt; /etc/systemd/system/ssmagent.service
 [Unit]
 Description=AWS SSM Agent
 After=network-online.target
@@ -53,13 +300,112 @@ ExecStart=/opt/aws/amazon-ssm-agent/bin/linux_amd64/amazon-ssm-agent
 [Install]
 WantedBy=multi-user.target
 EOF
-</code></pre><p>Then we enable it so it starts on boot, and start to start the service now:</p><pre tabindex=0><code>systemctl start ssmagent
+</code></pre><p>Then we enable it so it starts on boot, and start to start the service now:</p>
+<pre tabindex="0"><code>systemctl start ssmagent
 systemctl enable ssmagent
-</code></pre><p>Now type in <code>systemctl status ssmagent</code> and you should see the service running!</p><h2 id=conclusion>Conclusion</h2><p>I hope you found this article on getting started with Arch Linux on AWS useful. I plan on posting more about Arch Linux in the future as I continue into these side journeys, so stay tuned!</p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=https://github.com/aiell0 target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=mailto:lawrence.aiello@laiello.com target=_blank rel="noopener noreferrer me" title=Email><svg viewBox="0 0 24 21" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-</a><a href=https://www.linkedin.com/in/lawrenceaiello/ target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-</a><a href=https://medium.com/@aiell0tech target=_blank rel="noopener noreferrer me" title=Medium><svg version="1.0" fill="currentcolor" stroke-width="2" viewBox="0 0 76 76"><g transform="translate(0.000000,76.000000) scale(0.100000,-0.100000)"><path d="M0 380V0h380 380v380 380H380 0V380zm334 85c30-63 57-115 59-115s16 30 31 68c15 37 37 88 49 115l20 47h76l76-1-27-20-28-21V387c0-150 0-151 27-179l27-28H535 426l27 28c26 27 27 32 26 143 0 131 3 134-71-58-24-62-48-113-53-113-6 0-17 16-24 35s-36 83-64 142l-52 108-3-98c-3-97-2-99 28-133 16-19 30-39 30-44 0-6-31-10-70-10-45 0-70 4-70 11 0 6 14 27 30 46 30 33 30 35 30 151s0 118-31 155l-30 37h75 76l54-115z"/></g></svg>
-</a><a href=https://hachyderm.io/@aiell0 target=_blank rel="noopener noreferrer me" title=Mastodon><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.58 13.913c-.29 1.469-2.592 3.121-5.238 3.396-1.379.184-2.737.368-4.185.276-2.368-.092-4.237-.551-4.237-.551.0.184.014.459.043.643.308 2.294 2.317 2.478 4.22 2.57 1.922.0 3.633-.46 3.633-.46l.079 1.653s-1.344.734-3.738.918c-1.32.091-2.96-.092-4.869-.551-4.14-1.102-4.853-5.507-4.961-10.005-.034-1.285-.013-2.57-.013-3.58.0-4.589 3-5.966 3-5.966 1.513-.734 4.11-1.01 6.808-1.01h.067c2.699.0 5.296.276 6.81 1.01.0.0 3 1.377 3 5.967.0.0.037 3.304-.419 5.69" stroke="currentcolor"/><path d="M17.832 8.633v5h-1.978V8.78c0-1.023-.43-1.542-1.29-1.542-.95.0-1.427.616-1.427 1.834v2.655H11.17V9.072c0-1.218-.476-1.834-1.427-1.834-.86.0-1.29.52-1.29 1.542v4.852H6.475V8.633c0-1.022.26-1.834.782-2.434.538-.6 1.243-.909 2.118-.909 1.012.0 1.779.39 2.286 1.169l.492.827.493-.827c.507-.78 1.274-1.169 2.286-1.169.875.0 1.58.308 2.118.909.522.6.782 1.412.782 2.434" fill="currentcolor" stroke="none"/></svg>
-</a><a href=index.html target=_blank rel="noopener noreferrer me" title=Rss><svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div><small class=footer_copyright>© 2024 Lawrence Aiello.
-Powered by <a href=https://github.com/hugo-sid/hugo-blog-awesome target=_blank rel=noopener>Hugo blog awesome</a>.</small></footer><a href=# title="Go to top" id=totop><svg width="48" height="48" fill="currentcolor" stroke="currentcolor" viewBox="0 96 960 960"><path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197z"/></svg>
-</a><script src=https://aiell0.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30+lSNuSkl4QXuNyy8="></script></body></html>
+</code></pre><p>Now type in <code>systemctl status ssmagent</code> and you should see the service running!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope you found this article on getting started with Arch Linux on AWS useful. I plan on posting more about Arch Linux in the future as I continue into these side journeys, so stay tuned!</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/aiell0" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="mailto:lawrence.aiello@laiello.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/lawrenceaiello/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://medium.com/@aiell0tech" target="_blank" rel="noopener noreferrer me"
+    title="Medium">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="2"
+    viewBox="0 0 76.000000 76.000000" preserveAspectRatio="xMidYMid meet">
+    <g transform="translate(0.000000,76.000000) scale(0.100000,-0.100000)">
+        <path
+            d="M0 380 l0 -380 380 0 380 0 0 380 0 380 -380 0 -380 0 0 -380z m334 85 c30 -63 57 -115 59 -115 2 0 16 30 31 68 15 37 37 88 49 115 l20 47 76 0 76 -1 -27 -20 -28 -21 0 -151 c0 -150 0 -151 27 -179 l27 -28 -109 0 -109 0 27 28 c26 27 27 32 26 143 0 131 3 134 -71 -58 -24 -62 -48 -113 -53 -113 -6 0 -17 16 -24 35 -7 19 -36 83 -64 142 l-52 108 -3 -98 c-3 -97 -2 -99 28 -133 16 -19 30 -39 30 -44 0 -6 -31 -10 -70 -10 -45 0 -70 4 -70 11 0 6 14 27 30 46 30 33 30 35 30 151 0 116 0 118 -31 155 l-30 37 75 0 76 0 54 -115z" />
+    </g>
+</svg>
+</a>
+<a href="https://hachyderm.io/@aiell0" target="_blank" rel="noopener noreferrer me"
+    title="Mastodon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.58 13.913c-.29 1.469-2.592 3.121-5.238 3.396-1.379.184-2.737.368-4.185.276-2.368-.092-4.237-.551-4.237-.551 0 .184.014.459.043.643.308 2.294 2.317 2.478 4.22 2.57 1.922 0 3.633-.46 3.633-.46l.079 1.653s-1.344.734-3.738.918c-1.32.091-2.96-.092-4.869-.551-4.14-1.102-4.853-5.507-4.961-10.005-.034-1.285-.013-2.57-.013-3.58 0-4.589 3-5.966 3-5.966 1.513-.734 4.11-1.01 6.808-1.01h.067c2.699 0 5.296.276 6.81 1.01 0 0 3 1.377 3 5.967 0 0 .037 3.304-.419 5.69"
+        stroke="currentColor" />
+    <path
+        d="M17.832 8.633v5h-1.978V8.78c0-1.023-.43-1.542-1.29-1.542-.95 0-1.427.616-1.427 1.834v2.655H11.17V9.072c0-1.218-.476-1.834-1.427-1.834-.86 0-1.29.52-1.29 1.542v4.852H6.475V8.633c0-1.022.26-1.834.782-2.434.538-.6 1.243-.909 2.118-.909 1.012 0 1.779.39 2.286 1.169l.492.827.493-.827c.507-.78 1.274-1.169 2.286-1.169.875 0 1.58.308 2.118.909.522.6.782 1.412.782 2.434"
+        fill="currentColor" stroke="none" />
+</svg>
+</a>
+<a href="index.html" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Lawrence Aiello.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
