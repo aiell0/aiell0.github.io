@@ -2,23 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/posts/digital-nomad-china/</loc>
-    <lastmod>2023-11-04T10:26:14-04:00</lastmod>
+    <loc>http://localhost:1313/nomad/colombia/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2023-11-04T10:26:14-04:00</lastmod>
+    <loc>http://localhost:1313/posts/colombia/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
-    <lastmod>2023-11-04T10:26:14-04:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>http://localhost:1313/nomad/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/nomad/china/</loc>
+    <lastmod>2023-11-09T16:25:16-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/digital-nomad-china/</loc>
+    <lastmod>2023-11-09T16:25:16-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/first-post/</loc>
+    <loc>http://localhost:1313/posts/first-post/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/tech/first-post/</loc>
+    <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/tech/</loc>
+    <lastmod>2023-07-04T16:25:16-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

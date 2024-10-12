@@ -8,3 +8,5 @@ Run the following to serve locally:
 To add a post:
 
 * hugo new posts/post.md 
+
+If getting errors running `hugo server`, update module by git cloning into the `themes` folder.
