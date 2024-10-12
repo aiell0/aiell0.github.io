@@ -41,30 +41,25 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
     url = '/'
     weight = 10
   [[menu.main]]
-    pageRef="tech"
+    pageRef="technical articles"
     name = 'Technical Articles'
-    url = '/tech/'
-    weight = 20
-  [[menu.main]]
-    pageRef="book"
-    name = 'Book Reviews'
-    url = '/bookreviews/'
+    url = '/technical-articles/'
     weight = 30
   [[menu.main]]
-    pageRef="nomad"
-    name = 'Digital Nomadism'
-    url = '/nomad/'
+    pageRef="book reviews"
+    name = 'Book Reviews'
+    url = '/bookreviews/'
     weight = 40
   [[menu.main]]
-    pageRef="random"
-    name = 'Random'
-    url = '/random/'
+    pageRef="digital nomad trips"
+    name = 'Digital Nomad Trips'
+    url = '/digital-nomad-trips/'
     weight = 50
   [[menu.main]]
     pageRef="about"
     name = 'About'
     url = '/about/'
-    weight = 60
+    weight = 20
 
 [params]
   sitename = "Lawrence's Tech Blog"

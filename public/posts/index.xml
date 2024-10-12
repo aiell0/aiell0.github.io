@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Lawrence Aiello&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jan 2024 07:56:50 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2024 13:46:38 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Review: Rust in a Month of Lunches</title>
+      <link>http://localhost:1313/posts/book-review-rust-in-a-month-of-lunches/</link>
+      <pubDate>Sat, 12 Oct 2024 13:46:38 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/book-review-rust-in-a-month-of-lunches/</guid>
+      
+      <description>&lt;p&gt;I have attempted to learn Rust many times over the past few years. There are two main reasons why I have not picked up the Rust language until recently:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The learning curve seems steep for a language that I may not end up using on a day-to-day basis.&lt;/li&gt;
+&lt;li&gt;Most of the learning material is too theoretical and not practical enough for me to understand how these concepts are applied in real-world projects.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first point is no longer a concern as I now work at &lt;a href=&#34;https://rogo.ai&#34;&gt;a company&lt;/a&gt; that uses Rust in production. The second point is what motivated me to finally pick up the book &lt;a href=&#34;https://www.amazon.com/Learn-Month-Lunches-David-MacLeod/dp/1633438236&#34;&gt;&lt;em&gt;Rust in a Month of Lunches&lt;/em&gt;&lt;/a&gt;. It promised to be an approachable guide to Rust that is practical and immediately applicable to real-world projects. Seduced by these promises, along with the confidence of Amazon&amp;rsquo;s 30-day money back guarantee, I decided to give it a shot.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Digital Nomad: Colombia</title>
       <link>http://localhost:1313/posts/colombia/</link>
@@ -33,10 +49,10 @@
     
     <item>
       <title>Arch Adventures: Installing AWS SSM</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:1313/posts/arch-adventures-installing-aws-ssm/</link>
       <pubDate>Tue, 04 Jul 2023 16:25:16 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:1313/posts/arch-adventures-installing-aws-ssm/</guid>
       
       <description>&lt;h1 id=&#34;arch-adventures-installing-awsssm&#34;&gt;Arch Adventures: Installing AWS SSM&lt;/h1&gt;
 &lt;p&gt;One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.&lt;/p&gt;</description>

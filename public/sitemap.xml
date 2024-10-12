@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/nomad/colombia/</loc>
+    <loc>http://localhost:1313/book-reviews/book-review-rust-in-a-month-of-lunches/</loc>
+    <lastmod>2024-10-12T13:46:38-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/book-review-rust-in-a-month-of-lunches/</loc>
+    <lastmod>2024-10-12T13:46:38-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/book-reviews/</loc>
+    <lastmod>2024-10-12T13:46:38-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-10-12T13:46:38-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-10-12T13:46:38-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/digital-nomad-trips/</loc>
+    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/digital-nomad-trips/colombia/</loc>
     <lastmod>2024-01-22T07:56:50-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/colombia/</loc>
     <lastmod>2024-01-22T07:56:50-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nomad/</loc>
-    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-01-22T07:56:50-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/nomad/china/</loc>
+    <loc>http://localhost:1313/digital-nomad-trips/china/</loc>
     <lastmod>2023-11-09T16:25:16-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/digital-nomad-china/</loc>
@@ -26,13 +35,13 @@
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/first-post/</loc>
+    <loc>http://localhost:1313/posts/arch-adventures-installing-aws-ssm/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/first-post/</loc>
+    <loc>http://localhost:1313/technical-articles/arch-adventures-installing-aws-ssm/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tech/</loc>
+    <loc>http://localhost:1313/technical-articles/</loc>
     <lastmod>2023-07-04T16:25:16-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
