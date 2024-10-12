@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Lawrence Aiello&#39;s Blog</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Lawrence Aiello&#39;s Blog</description>
+    <title>Nomads on Lawrence Aiello&#39;s Blog</title>
+    <link>http://localhost:1313/nomad/</link>
+    <description>Recent content in Nomads on Lawrence Aiello&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jan 2024 07:56:50 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 07:56:50 -0500</lastBuildDate><atom:link href="http://localhost:1313/nomad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Digital Nomad: Colombia</title>
-      <link>http://localhost:1313/posts/colombia/</link>
+      <link>http://localhost:1313/nomad/colombia/</link>
       <pubDate>Mon, 22 Jan 2024 07:56:50 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/colombia/</guid>
+      <guid>http://localhost:1313/nomad/colombia/</guid>
       
       <description>&lt;h1 id=&#34;digital-nomad-in-colombia&#34;&gt;Digital Nomad in Colombia&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;ve never met a person that really enjoys the Northeastern winters, we just deal with it. The past few winters, I have been traveling to warmer climates during a portion of it to get a break from the cold weather. I imagine at some point in my future, I will eventually be spending most of winter in another place. So this issue of &amp;ldquo;Digital Nomad&amp;rdquo; will be concerning my brief time spent in Latin America, specifically Colombia. I will briefly go over the two cities I visited and worked from, and at the end give some pros/cons if you are considering a trip like this.&lt;/p&gt;</description>
@@ -21,25 +21,13 @@
     
     <item>
       <title>Digital Nomad: China</title>
-      <link>http://localhost:1313/posts/digital-nomad-china/</link>
+      <link>http://localhost:1313/nomad/china/</link>
       <pubDate>Thu, 09 Nov 2023 16:25:16 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/digital-nomad-china/</guid>
+      <guid>http://localhost:1313/nomad/china/</guid>
       
       <description>&lt;h1 id=&#34;digital-nomad-in-china&#34;&gt;Digital Nomad in China&lt;/h1&gt;
 &lt;p&gt;Recently, I had the opportunity to travel in China. It was a month long trip and was a mixture of pleasure (sightseeing) and personal (my partner&amp;rsquo;s family is from there). Given that I recently joined my company and due to the length of the trip, I did not have the luxury of taking too much time off. I love a challenge, so I decided to work west coast US hours from Asia. Yes, you read that right. For a month straight, I worked from 12am - 8am every weekday. In this article, I want to share a little of what I saw there, and also offer some tips if you want to do the same.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Arch Adventures: Installing AWS SSM</title>
-      <link>http://localhost:1313/posts/first-post/</link>
-      <pubDate>Tue, 04 Jul 2023 16:25:16 -0400</pubDate>
-      
-      <guid>http://localhost:1313/posts/first-post/</guid>
-      
-      <description>&lt;h1 id=&#34;arch-adventures-installing-awsssm&#34;&gt;Arch Adventures: Installing AWS SSM&lt;/h1&gt;
-&lt;p&gt;One of my DevOps side projects as of late has been setting up blockchain nodes. Since proof of stake has really taken hold a few years back, we are seeing a Cambrian explosion of projects all using proof of stake to secure their network. It is the perfect environment for DevOps engineers to practice their craft as there is and will need to be a huge DevOps need to power these networks as they continue to grow.&lt;/p&gt;</description>
       
     </item>
     
