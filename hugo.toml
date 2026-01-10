@@ -41,6 +41,11 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
     url = '/'
     weight = 10
   [[menu.main]]
+    pageRef="think pieces"
+    name = 'Think Pieces'
+    url = '/think-pieces/'
+    weight = 20
+  [[menu.main]]
     pageRef="technical articles"
     name = 'Technical Articles'
     url = '/technical-articles/'
@@ -50,11 +55,6 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
     name = 'Book Reviews'
     url = '/bookreviews/'
     weight = 40
-  [[menu.main]]
-    pageRef="digital nomad trips"
-    name = 'Digital Nomad Trips'
-    url = '/digital-nomad-trips/'
-    weight = 50
   [[menu.main]]
     pageRef="about"
     name = 'About'
@@ -82,7 +82,7 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Lawrence Aiello"
   name = "Lawrence Aiello"
-  description = "Musings on Tech, DevOps, and Digital Nomadism"
+  description = "Musings on Tech, DevOps, and AI"
 
 # Allow to override webmanifest options
 [params.webmanifest]

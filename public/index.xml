@@ -6,7 +6,43 @@
     <description>Recent content on Lawrence Aiello&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Apr 2025 09:49:37 -0400</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jan 2026 16:25:16 -0400</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Post Labor Dev Era</title>
+      <link>http://localhost:1313/posts/the-post-labor-dev-era/</link>
+      <pubDate>Fri, 09 Jan 2026 16:25:16 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-post-labor-dev-era/</guid>
+      
+      <description>&lt;h1 id=&#34;the-post-labor-dev-era&#34;&gt;The Post-Labor Dev Era&lt;/h1&gt;
+&lt;p&gt;AI was a hype machine in 2025, and I don&amp;rsquo;t expect that to stop. If you open LinkedIn, you&amp;rsquo;ll see it everywhere (and yes, I&amp;rsquo;m contributing to it too).&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s more interesting to me is that most people still don&amp;rsquo;t feel the hype in their daily work. That&amp;rsquo;s not because the tools aren&amp;rsquo;t real. It&amp;rsquo;s because adoption is slow for two reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Human inertia:&lt;/strong&gt; changing habits is hard.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bureaucratic inertia:&lt;/strong&gt; companies move slowly, even when the tools exist.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And bureaucracies are made of people, so those forces compound.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Post Labor Dev Era</title>
+      <link>http://localhost:1313/think-pieces/the-post-labor-dev-era/</link>
+      <pubDate>Fri, 09 Jan 2026 16:25:16 -0400</pubDate>
+      
+      <guid>http://localhost:1313/think-pieces/the-post-labor-dev-era/</guid>
+      
+      <description>&lt;h1 id=&#34;the-post-labor-dev-era&#34;&gt;The Post-Labor Dev Era&lt;/h1&gt;
+&lt;p&gt;AI was a hype machine in 2025, and I don&amp;rsquo;t expect that to stop. If you open LinkedIn, you&amp;rsquo;ll see it everywhere (and yes, I&amp;rsquo;m contributing to it too).&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s more interesting to me is that most people still don&amp;rsquo;t feel the hype in their daily work. That&amp;rsquo;s not because the tools aren&amp;rsquo;t real. It&amp;rsquo;s because adoption is slow for two reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Human inertia:&lt;/strong&gt; changing habits is hard.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bureaucratic inertia:&lt;/strong&gt; companies move slowly, even when the tools exist.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And bureaucracies are made of people, so those forces compound.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Book Review: Designing Machine Learning Systems</title>
       <link>http://localhost:1313/book-reviews/book-review-designing-ml-systems/</link>
