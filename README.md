@@ -5,9 +5,13 @@ Run the following to serve locally:
 * git submodule init
 * git submodule update
 
-To add a post:
+To add a think piece:
 
-* hugo new posts/post.md 
+* hugo new think/post.md
+
+To add a technical article:
+
+* hugo new tech/post.md
 
 If getting errors running `hugo server`, update module by git cloning into the `themes` folder.
 
