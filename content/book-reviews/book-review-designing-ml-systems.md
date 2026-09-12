@@ -2,6 +2,8 @@
 title: "Book Review: Designing Machine Learning Systems"
 date: 2025-04-04T09:49:37-04:00
 draft: false
+aliases:
+  - /posts/book-review-designing-ml-systems/
 ---
 
 Since the start of this year, [my place of work](https://rogo.ai) has started to delve deeper into the work of AI model infrastructure. Much of the work around AI leaves me asking "why" on many things. In addition to this, many new terms are getting thrown around at work and I find myself lost. As much as I want others at the office to teach me everything, we are all busy. I am one of those people who still like to read books to learn (which is a bit ironic given I could just ask ChatGPT I guess) and thus I found myself reading this book.
@@ -15,4 +17,3 @@ Chapters 4 through 6 is where things get meatier and a bit heavy, as the book de
 Chapters 7 through 10 were slightly easier although still difficult, mostly because these parts dealt with running models in production and tooling around DevOps. This is the part of the book that will probably help me the most and is the most relevant to me, as I will be working on the MLOps for my company in the not-so-distant future. The chapter on tooling (10) was especially useful, as I was unaware of many of these tools before reading the book.
 
 It's important to note that this book deals with training your own models vs. using a public one like GPT, or fine-tuning. This is work that is most likely only being done by established companies or consulting firms, so it is not likely I will be using most of the information (at least not immediately). Nonetheless, I though it would be helpful to give me a foundation upon which future learnings could be built. My next book will be [AI Engineering](https://www.amazon.com/dp/1098166302) which is by the same author and looks to be much more relevant. I will be dropping another post when I finish that one (hopefully not too far away). Stay tuned!
-

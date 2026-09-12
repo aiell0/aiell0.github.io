@@ -2,6 +2,9 @@
 title: "The Post Labor Dev Era"
 date: 2026-01-09T16:25:16-04:00
 draft: false
+aliases:
+  - /posts/the-post-labor-dev-era/
+  - /think-pieces/the-post-labor-dev-era/
 ---
 
 # The Post-Labor Dev Era
@@ -132,4 +135,3 @@ I hope you enjoyed this article, and have a great 2026!
 _All opinions are my own._
 
 --- 
-

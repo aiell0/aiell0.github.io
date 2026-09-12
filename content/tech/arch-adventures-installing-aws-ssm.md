@@ -2,6 +2,9 @@
 title: "Arch Adventures: Installing AWS SSM"
 date: 2023-07-04T16:25:16-04:00
 draft: false
+aliases:
+  - /posts/arch-adventures-installing-aws-ssm/
+  - /technical-articles/arch-adventures-installing-aws-ssm/
 ---
 
 # Arch Adventures: Installing AWS SSM

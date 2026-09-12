@@ -2,6 +2,8 @@
 title: "Digital Nomad: Colombia"
 date: 2024-01-22T07:56:50-05:00
 draft: false
+aliases:
+  - /posts/colombia/
 ---
 
 # Digital Nomad in Colombia

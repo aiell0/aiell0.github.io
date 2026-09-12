@@ -2,6 +2,8 @@
 title: "Digital Nomad: China"
 date: 2023-11-09T16:25:16-04:00
 draft: false
+aliases:
+  - /posts/digital-nomad-china/
 ---
 
 # Digital Nomad in China

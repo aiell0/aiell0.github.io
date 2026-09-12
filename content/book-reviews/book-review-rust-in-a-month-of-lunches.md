@@ -2,6 +2,8 @@
 title: "Book Review: Rust in a Month of Lunches"
 date: 2024-10-12T13:46:38-04:00
 draft: false
+aliases:
+  - /posts/book-review-rust-in-a-month-of-lunches/
 ---
 
 I have attempted to learn Rust many times over the past few years. There are two main reasons why I have not picked up the Rust language until recently:
