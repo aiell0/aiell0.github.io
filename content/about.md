@@ -1,11 +1,11 @@
 ---
 title: About Me
-date: 2023-07-04T16:25:16-04:00
 draft: false
+toc: false
 ---
 
-Hey there! My name is Lawrence Aiello and I am a seasoned technology professional with over 10 years of experience. I have held roles as a Software Engineer, Site Reliability Engineer, Consultant, and now as a DevOps Engineer.
+Hey there! My name is Lawrence Aiello and I am a seasoned technology professional with over 10 years of experience. I have held roles as a Software Engineer, Site Reliability Engineer, Consultant, and now as a DevOps Engineer. Across each role, the common thread has been the same: building systems that reduce deployment friction, improve operational consistency, and help engineering teams scale with confidence.
 
 ![Portugal](/bio.jpeg)
 
-I mostly specialize in Terraform, AWS, Kubernetes, and Docker deployments. I will be using these space to muse about these topics and others as I go along my tech journey.
+The theme throughout my career is adaptability. I’ve moved across different engineering disciplines by continually learning what teams need to ship faster, reduce operational burden, and support growing infrastructure demands. In the current age of AI, that adaptability has become even more important as I explore how AI can improve engineering workflows, platform capabilities, and developer velocity. I’m always interested in connecting with engineering leaders, platform teams, and builders working on cloud strategy, GitOps, infrastructure automation, developer experience, or AI enablement.
