@@ -1,10 +1,14 @@
 title = "Lawrence Aiello's Blog"
-baseURL = 'https://aiell0.github.io/'
+baseURL = 'https://laiello.com/'
 
 # This is what goes in <html lang="">
 locale = 'en-us'
 
 theme = "hugo-blog-awesome"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 # This defines how dates are formatted
 defaultContentLanguage = "en-gb"
@@ -77,6 +81,7 @@ enableEmoji = true
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Lawrence Aiello"
   name = "Lawrence Aiello"
+  email = "lawrence.aiello@laiello.com"
   description = "Engineer, Technologist, Human"
 
 # Allow to override webmanifest options
