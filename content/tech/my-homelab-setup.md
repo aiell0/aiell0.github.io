@@ -1,7 +1,7 @@
 ---
 title: "My Homelab Setup: Hardware"
 date: 2026-09-13T12:58:49-04:00
-draft: true
+draft: false
 toc: false
 ---
 
